@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
 import FeedItem from '../FeedItem';
+import './style.css';
 
 class FeedItems extends React.Component {
   render() {

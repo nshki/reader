@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './style.css';
 
 class FeedItem extends React.Component {
   render() {
@@ -7,8 +8,10 @@ class FeedItem extends React.Component {
 
     return (
       <a className="feed-item" href={url} target="_blank">
-        <span className="feed-item__main">{title}</span>
-        <span className="feed-item__side">{date}</span>
+        <div className="container">
+          <h3 className="feed-item__main">{title}</h3>
+          <p className="feed-item__side">{date}</p>
+        </div>
       </a>
     );
   }

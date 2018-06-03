@@ -1,0 +1,15 @@
+.feed-source {
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.feed-source__flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.feed-source__name {
+  margin: 0;
+}

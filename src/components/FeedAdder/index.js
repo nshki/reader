@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
+import './style.css';
 
 class FeedAdder extends React.Component {
   state = { inputVal: '' };
@@ -20,12 +21,14 @@ class FeedAdder extends React.Component {
   render() {
     return (
       <form className="feed-adder" onSubmit={this.handleSubmit}>
-        <input
-          className="feed-adder__input"
-          type="url"
-          placeholder="Enter RSS URL"
-          onChange={this.handleChange}
-        />
+        <div className="container">
+          <input
+            className="feed-adder__input"
+            type="url"
+            placeholder="Enter RSS URL"
+            onChange={this.handleChange}
+          />
+        </div>
       </form>
     );
   }
