@@ -6,6 +6,8 @@ class App extends Component {
 
   parser = new Parser();
   corsProxy = 'https://cors-anywhere.herokuapp.com';
+  namespace = 'rss-reader';
+  localFeeds = `${this.namespace}-feeds`;
 
   handleChange = (e) => {
     this.setState({ inputVal: e.target.value });
@@ -15,9 +17,20 @@ class App extends Component {
     e.preventDefault();
     const { inputVal, feeds } = this.state;
     if (!feeds.includes(inputVal)) {
-      this.setState({ feeds: [...feeds, inputVal] });
+      this.setState({ feeds: [...feeds, inputVal] }, () => {
+        const feedString = JSON.stringify(this.state.feeds);
+        localStorage.setItem(this.localFeeds, feedString);
+      });
     }
   };
+
+  componentDidMount() {
+    const localFeeds = localStorage.getItem(this.localFeeds);
+    const feedString = JSON.parse(localFeeds);
+    if (Array.isArray(feedString)) {
+      this.setState({ feeds: feedString });
+    }
+  }
 
   componentDidUpdate(prevProps, prevState) {
     const { feeds } = this.state;
