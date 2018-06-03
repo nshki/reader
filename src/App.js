@@ -52,7 +52,7 @@ class App extends Component {
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type="url"
             placeholder="Enter RSS URL"
             onChange={this.handleChange}
           />
