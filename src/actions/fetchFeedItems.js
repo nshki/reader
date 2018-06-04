@@ -1,4 +1,5 @@
 import { rssParser, corsProxy } from '../shared/constants';
+import { sortFeedItems } from '../helpers';
 import moment from 'moment';
 
 /**
@@ -20,6 +21,7 @@ const fetchFeedItems = async (state) => {
     feedItems = feedItems.concat(feed.items);
   }
 
+  feedItems = sortFeedItems(feedItems);
   return { feedItems };
 };
 
