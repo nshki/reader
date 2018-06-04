@@ -39,11 +39,9 @@ class FeedAdder extends React.Component {
 }
 
 const mapToProps = ({
-  feedUrls,
   submitInputVal,
   fetchFeedItems,
 }) => ({
-  feedUrls,
   submitInputVal,
   fetchFeedItems,
 });
