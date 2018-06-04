@@ -10,7 +10,7 @@ class FeedSources extends React.Component {
 
     return (
       <ul className="feed-sources">
-        {feedUrls.map((feedUrl, i) =>
+        {feedUrls && feedUrls.map((feedUrl, i) =>
           <li key={`feed-source-${i}`} className="feed-sources__item">
             <FeedSource name={feedUrl} />
           </li>

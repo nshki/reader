@@ -11,13 +11,13 @@ import { setLocalStorage } from '../helpers';
 const submitInputVal = (state, inputVal) => {
   const { feedUrls } = state;
 
-  if (!feedUrls.includes(inputVal)) {
+  if (feedUrls && !feedUrls.includes(inputVal)) {
     const newFeedUrls = [...feedUrls, inputVal];
-
     setLocalStorage(newFeedUrls);
-
     return { feedUrls: [...feedUrls, inputVal] };
   }
+
+  return state;
 };
 
 export default submitInputVal;

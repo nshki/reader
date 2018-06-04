@@ -21,6 +21,8 @@ const removeFeedSource = (state, feedUrl) => {
 
     return { feedUrls: newFeedUrls };
   }
+
+  return state;
 };
 
 export default removeFeedSource;
