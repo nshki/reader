@@ -1,3 +1,5 @@
+import { setLocalStorage } from '../helpers';
+
 /**
  * Given a string, removes the string from the list of feed URLs.
  *
@@ -10,12 +12,14 @@ const removeFeedSource = (state, feedUrl) => {
   const feedUrlPos = feedUrls.indexOf(feedUrl);
 
   if (feedUrlPos > -1) {
-    return {
-      feedUrls: [
-        ...feedUrls.slice(0, feedUrlPos),
-        ...feedUrls.slice(feedUrlPos + 1),
-      ],
-    };
+    const newFeedUrls = [
+      ...feedUrls.slice(0, feedUrlPos),
+      ...feedUrls.slice(feedUrlPos + 1),
+    ];
+
+    setLocalStorage(newFeedUrls);
+
+    return { feedUrls: newFeedUrls };
   }
 };
 
