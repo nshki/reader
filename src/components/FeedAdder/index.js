@@ -16,9 +16,12 @@ class FeedAdder extends React.Component {
     e.preventDefault();
     submitInputVal(inputVal);
     fetchFeedItems();
+    this.setState({ inputVal: '' });
   };
 
   render() {
+    const { inputVal } = this.state;
+
     return (
       <form className="feed-adder" onSubmit={this.handleSubmit}>
         <div className="container">
@@ -26,6 +29,7 @@ class FeedAdder extends React.Component {
             className="feed-adder__input"
             type="url"
             placeholder="Enter RSS URL"
+            value={inputVal}
             onChange={this.handleChange}
           />
         </div>
