@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
+import { FeedAdder } from '../../components';
 import { getLocalStorage } from '../../helpers';
 import './style.css';
 
@@ -32,6 +33,8 @@ class Header extends React.Component {
             </nav>
           </div>
         </div>
+
+        <FeedAdder />
       </header>
     );
   }
