@@ -10,8 +10,10 @@ class Header extends React.Component {
   componentDidMount() {
     const { setFeedUrls, fetchFeedItems } = this.props;
     const feedUrls = getLocalStorage();
-    setFeedUrls(feedUrls);
-    fetchFeedItems();
+    if (feedUrls) {
+      setFeedUrls(feedUrls);
+      fetchFeedItems();
+    }
   }
 
   render() {
