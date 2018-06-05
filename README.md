@@ -25,3 +25,8 @@ This app is made with create-react-app, so all default Yarn commands work.
 
 - `yarn start` to start a dev server
 - `yarn build` to build a production-ready app
+
+
+## Credits
+
+- Elephant by Arthur Shlain from the Noun Project
