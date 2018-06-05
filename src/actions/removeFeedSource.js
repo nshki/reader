@@ -17,8 +17,7 @@ const removeFeedSource = (state, feedUrl) => {
       ...feedUrls.slice(feedUrlPos + 1),
     ];
 
-    setLocalStorage(newFeedUrls);
-
+    setLocalStorage({ ...state, feedUrls: newFeedUrls });
     return { feedUrls: newFeedUrls };
   }
 

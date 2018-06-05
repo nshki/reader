@@ -1,13 +1,13 @@
 import submitInputVal from './submitInputVal';
 import fetchFeedItems from './fetchFeedItems';
 import removeFeedSource from './removeFeedSource';
-import setFeedUrls from './setFeedUrls';
+import restoreState from './restoreState';
 
 const actions = (store) => ({
   submitInputVal,
   fetchFeedItems,
   removeFeedSource,
-  setFeedUrls,
+  restoreState,
 });
 
 export default actions;

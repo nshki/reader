@@ -13,8 +13,8 @@ const submitInputVal = (state, inputVal) => {
 
   if (feedUrls && !feedUrls.includes(inputVal)) {
     const newFeedUrls = [...feedUrls, inputVal];
-    setLocalStorage(newFeedUrls);
-    return { feedUrls: [...feedUrls, inputVal] };
+    setLocalStorage({ ...state, feedUrls: newFeedUrls });
+    return { feedUrls: newFeedUrls };
   }
 
   return state;

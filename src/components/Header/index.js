@@ -8,10 +8,10 @@ import './style.css';
 
 class Header extends React.Component {
   componentDidMount() {
-    const { setFeedUrls, fetchFeedItems } = this.props;
-    const feedUrls = getLocalStorage();
-    if (feedUrls) {
-      setFeedUrls(feedUrls);
+    const { restoreState, fetchFeedItems } = this.props;
+    const savedState = getLocalStorage();
+    if (savedState && typeof savedState === 'object') {
+      restoreState(savedState);
       fetchFeedItems();
     }
   }
@@ -49,10 +49,10 @@ class Header extends React.Component {
 }
 
 const mapToProps = ({
-  setFeedUrls,
+  restoreState,
   fetchFeedItems,
 }) => ({
-  setFeedUrls,
+  restoreState,
   fetchFeedItems,
 });
 

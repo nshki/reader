@@ -1,5 +1,5 @@
 import { rssParser, corsProxy } from '../shared/constants';
-import { sortFeedItems } from '../helpers';
+import { sortFeedItems, setLocalStorage } from '../helpers';
 import moment from 'moment';
 
 /**
@@ -24,6 +24,7 @@ const fetchFeedItems = async (state) => {
   }
 
   feedItems = sortFeedItems(feedItems);
+  setLocalStorage({ ...state, feedItems });
   return { feedItems };
 };
 
