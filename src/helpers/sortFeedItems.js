@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 /**
  * Given an array of feed item objects, sort them by date.
  *
@@ -6,9 +8,12 @@
  */
 const sortFeedItems = (feedItems) => {
   return [...feedItems].sort((a, b) => {
-    if (a.pubDate < b.pubDate) {
+    const aMoment = moment(a.pubDate);
+    const bMoment = moment(b.pubDate);
+
+    if (aMoment.isBefore(bMoment)) {
       return 1;
-    } else if (a.pubDate > b.pubDate) {
+    } else if (aMoment.isAfter(bMoment)) {
       return -1;
     } else {
       return 0;
