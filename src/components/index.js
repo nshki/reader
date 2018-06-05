@@ -4,6 +4,7 @@ import FeedItems from './FeedItems';
 import FeedSource from './FeedSource';
 import FeedSources from './FeedSources';
 import Header from './Header';
+import Footer from './Footer';
 
 export {
   FeedAdder,
@@ -12,4 +13,5 @@ export {
   FeedSource,
   FeedSources,
   Header,
+  Footer,
 };
