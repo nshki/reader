@@ -18,9 +18,9 @@ class FeedSource extends React.Component {
       <div className="feed-source">
         <div className="container">
           <div className="feed-source__flex">
-            <h3 className="feed-source__name">{name}</h3>
+            <h4 className="feed-source__name">{name}</h4>
             <button
-              className="feed-source__remove"
+              className="feed-source__action"
               onClick={() => this.handleRemove(name)}
             >
               Remove
