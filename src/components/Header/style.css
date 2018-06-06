@@ -67,7 +67,7 @@
 
 .header__progress-container {
   position: absolute;
-  bottom: 0;
+  bottom: -2.5px;
   left: 0;
   right: 0;
 }
