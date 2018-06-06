@@ -14,7 +14,7 @@ class FeedAdder extends React.Component {
     const { inputVal } = this.state;
     const { submitInputVal, fetchFeedItems, updateLoadProgress } = this.props;
     e.preventDefault();
-    submitInputVal(inputVal);
+    submitInputVal(inputVal.trim());
     fetchFeedItems(updateLoadProgress);
     this.setState({ inputVal: '' });
   };
