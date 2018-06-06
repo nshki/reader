@@ -65,6 +65,13 @@
   color: #fff;
 }
 
+.header__progress-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 @media (min-width: 555px) {
   .header {
     padding: 10px 0 15px 0;

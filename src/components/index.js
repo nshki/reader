@@ -5,6 +5,7 @@ import FeedSource from './FeedSource';
 import FeedSources from './FeedSources';
 import Header from './Header';
 import Footer from './Footer';
+import ProgressBar from './ProgressBar';
 
 export {
   FeedAdder,
@@ -14,4 +15,5 @@ export {
   FeedSources,
   Header,
   Footer,
+  ProgressBar,
 };

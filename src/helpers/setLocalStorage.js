@@ -7,7 +7,8 @@ import { namespace } from '../shared/constants';
  * @return {void}
  */
 const setLocalStorage = (data) => {
-  const stringifiedData = JSON.stringify(data);
+  const { feedUrls, feedItems } = data;
+  const stringifiedData = JSON.stringify({ feedUrls, feedItems });
   localStorage.setItem(namespace, stringifiedData);
 };
 

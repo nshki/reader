@@ -1,0 +1,27 @@
+@keyframes progress-pulse {
+  0% { background-color: #dfb746; }
+  50% { background-color: #fbd874; }
+  100% { background-color: #dfb746; }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  opacity: 0;
+}
+
+.progress-bar--visible {
+  opacity: 1;
+}
+
+.progress-bar__fill {
+  background-color: #dfb746;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 0 7px #dfb746;
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+  animation: progress-pulse 1s linear infinite;
+}
