@@ -6,9 +6,9 @@ import './style.css';
 
 class FeedSource extends React.Component {
   handleRemove = (name) => {
-    const { removeFeedSource, fetchFeedItems } = this.props;
+    const { removeFeedSource, fetchFeedItems, updateLoadProgress } = this.props;
     removeFeedSource(name);
-    fetchFeedItems();
+    fetchFeedItems(updateLoadProgress);
   };
 
   render() {
@@ -39,9 +39,11 @@ FeedSource.propTypes = {
 const mapToProps = ({
   removeFeedSource,
   fetchFeedItems,
+  updateLoadProgress,
 }) => ({
   removeFeedSource,
   fetchFeedItems,
+  updateLoadProgress,
 });
 
 export default connect(mapToProps, actions)(FeedSource);

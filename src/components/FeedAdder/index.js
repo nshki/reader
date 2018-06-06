@@ -12,10 +12,10 @@ class FeedAdder extends React.Component {
 
   handleSubmit = (e) => {
     const { inputVal } = this.state;
-    const { submitInputVal, fetchFeedItems } = this.props;
+    const { submitInputVal, fetchFeedItems, updateLoadProgress } = this.props;
     e.preventDefault();
     submitInputVal(inputVal);
-    fetchFeedItems();
+    fetchFeedItems(updateLoadProgress);
     this.setState({ inputVal: '' });
   };
 
@@ -41,9 +41,11 @@ class FeedAdder extends React.Component {
 const mapToProps = ({
   submitInputVal,
   fetchFeedItems,
+  updateLoadProgress,
 }) => ({
   submitInputVal,
   fetchFeedItems,
+  updateLoadProgress,
 });
 
 export default connect(mapToProps, actions)(FeedAdder);
