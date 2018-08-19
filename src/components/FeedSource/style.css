@@ -12,7 +12,7 @@
 
 .feed-source__name {
   word-break: break-all;
-  margin: 0 auto 0 0;
+  margin: 0;
 }
 
 .feed-source__action {
@@ -49,6 +49,10 @@
 @media (min-width: 555px) {
   .feed-source__flex {
     flex-direction: row;
+  }
+
+  .feed-source__name {
+    margin-right: auto;
   }
 
   .feed-source__action {
