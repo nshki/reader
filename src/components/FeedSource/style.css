@@ -12,12 +12,13 @@
 
 .feed-source__name {
   word-break: break-all;
-  margin: 0;
+  margin: 0 auto 0 0;
 }
 
 .feed-source__action {
-  background-color: #ff4500;
+  background-color: #4673df;
   text-transform: uppercase;
+  text-decoration: none;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   color: #fff;
@@ -33,6 +34,14 @@
 }
 
 .feed-source__action:hover {
+  background-color: #244fb7;
+}
+
+.feed-source__action--alt {
+  background-color: #ff4500;
+}
+
+.feed-source__action--alt:hover {
   background-color: #cc4500;
 }
 
@@ -44,6 +53,7 @@
   .feed-source__action {
     width: auto;
     margin-top: 0;
+    margin-left: 5px;
     padding: 5px 8px;
   }
 }

@@ -13,7 +13,8 @@ class App extends React.Component {
           <React.Fragment>
             <Header />
             <Route exact path="/" component={Feed} />
-            <Route path="/manage" component={Manage} />
+            <Route path="/source/" component={Feed} />
+            <Route exact path="/manage" component={Manage} />
             <Footer />
           </React.Fragment>
         </Router>

@@ -4,9 +4,7 @@ import { FeedItems } from '../../components';
 class Feed extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <FeedItems />
-      </React.Fragment>
+      <FeedItems pathname={this.props.location.pathname} />
     );
   }
 }

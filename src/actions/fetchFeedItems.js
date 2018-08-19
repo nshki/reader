@@ -24,6 +24,7 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
       let feed = await rssParser.parseURL(`${corsProxy}/${feedUrl}`);
       feed.items.forEach((feedItem) => {
         feedItem.date = moment(feedItem.pubDate).format('MMM D, YYYY @ h:mma');
+        feedItem.source = feedUrl;
       });
       feedItems = feedItems.concat(feed.items);
     }
