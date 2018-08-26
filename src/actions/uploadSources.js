@@ -13,9 +13,8 @@ const uploadSources = (state, items) => {
 
   if (feedUrls && items.length > 0) {
     items.forEach((item) => {
-      const feedUrl = item;
-      if (newFeedUrls.indexOf(feedUrl) === -1) {
-        newFeedUrls.push(feedUrl);
+      if (newFeedUrls.indexOf(item.feedUrl) === -1) {
+        newFeedUrls.push(item.feedUrl);
       }
     });
     setLocalStorage({ ...state, feedUrls: newFeedUrls });
