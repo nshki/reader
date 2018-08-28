@@ -21,10 +21,10 @@ https://rss-reader.netlify.com/
 
 ## Setup
 
-This app is made with create-react-app, so all default Yarn commands work.
+This app is made with create-react-app, so all default Yarn commands work. The following commands are essential to develop locally:
 
 - `yarn start` to start a dev server
-- `yarn build` to build a production-ready app
+- `yarn start:lambda` to serve Lambda functions
 
 
 ## Credits

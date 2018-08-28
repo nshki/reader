@@ -7,7 +7,11 @@ import { namespace } from '../shared/constants';
  * @return {void}
  */
 const setLocalStorage = (data) => {
-  const { feedUrls, feedItems } = data;
+  let { feedUrls, feedItems } = data;
+
+  // Limit feed items so we don't go over localStorage quota.
+  feedItems = feedItems.slice(0, 1000);
+
   const stringifiedData = JSON.stringify({ feedUrls, feedItems });
   localStorage.setItem(namespace, stringifiedData);
 };
