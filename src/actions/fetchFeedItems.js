@@ -21,15 +21,16 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
       i += 1;
       updateLoadProgress(i / feedUrls.length);
 
-      // eslint-disable-next-line
-      rssParser.parseURL(`${corsProxy}/?url=${feedUrl}`, (err, feed) => {
-        if (err) return;
+      try {
+        let feed = await rssParser.parseURL(`${corsProxy}/?url=${feedUrl}`);
         feed.items.forEach((feedItem) => {
           feedItem.date = moment(feedItem.pubDate).format('MMM D, YYYY @ h:mma');
           feedItem.source = feedUrl;
         });
         feedItems = feedItems.concat(feed.items);
-      });
+      } catch (err) {
+        continue;
+      }
     }
   }
 
