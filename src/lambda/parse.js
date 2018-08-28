@@ -8,9 +8,6 @@ export function handler(event, context, callback) {
       return callback(null, { statusCode: 200, body: err });
     }
 
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify(body),
-    });
+    callback(null, { statusCode: 200, body });
   });
 };
