@@ -29,17 +29,26 @@ class FeedItems extends React.Component {
             </div>
           </div>
         }
-        <ul className="feed-items">
-          {filteredItems.map((feedItem, i) => (
-            <li key={`feed-item-${i}`} className="feed-items__item">
-              <FeedItem
-                title={feedItem.title}
-                url={feedItem.link}
-                date={feedItem.date}
-              />
-            </li>
-          ))}
-        </ul>
+        {filteredItems.length > 0 &&
+          <ul className="feed-items">
+            {filteredItems.map((feedItem, i) => (
+              <li key={`feed-item-${i}`} className="feed-items__item">
+                <FeedItem
+                  title={feedItem.title}
+                  url={feedItem.link}
+                  date={feedItem.date}
+                />
+              </li>
+            ))}
+          </ul>
+        }
+        {filteredItems.length === 0 &&
+          <div className="container">
+            <p className="feed-items__empty">
+              No news here! Try adding some sources above.
+            </p>
+          </div>
+        }
       </React.Fragment>
     );
   }

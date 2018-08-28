@@ -40,6 +40,10 @@ class Header extends React.Component {
                 <li className="header__nav__item">
                   <Link to="/manage" className="header__nav__link">Sources</Link>
                 </li>
+
+                <li className="header__nav__item">
+                  <Link to="/import" className="header__nav__link">Import</Link>
+                </li>
               </ul>
             </nav>
           </div>

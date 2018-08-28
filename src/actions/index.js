@@ -3,6 +3,7 @@ import fetchFeedItems from './fetchFeedItems';
 import removeFeedSource from './removeFeedSource';
 import restoreState from './restoreState';
 import updateLoadProgress from './updateLoadProgress';
+import uploadSources from './uploadSources';
 
 const actions = (store) => ({
   submitInputVal,
@@ -10,6 +11,7 @@ const actions = (store) => ({
   removeFeedSource,
   restoreState,
   updateLoadProgress,
+  uploadSources,
 });
 
 export default actions;

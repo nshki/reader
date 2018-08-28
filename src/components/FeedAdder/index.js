@@ -21,7 +21,6 @@ class FeedAdder extends React.Component {
 
   render() {
     const { inputVal } = this.state;
-
     return (
       <form className="feed-adder" onSubmit={this.handleSubmit}>
         <div className="container">
