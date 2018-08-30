@@ -13,7 +13,7 @@ import moment from 'moment';
 const fetchFeedItems = async (state, updateLoadProgress) => {
   const { feedUrls } = state;
   let feedItems = [];
-  let feedNames = [];
+  let feedNames = {};
 
   if (feedUrls) {
     let i = 0;
@@ -38,7 +38,7 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
 
   updateLoadProgress(0);
   feedItems = sortFeedItems(feedItems);
-  setLocalStorage({ ...state, feedItems });
+  setLocalStorage({ ...state, feedItems, feedNames });
   return { feedItems, feedNames };
 };
 
