@@ -6,17 +6,20 @@ import './style.css';
 
 class FeedSources extends React.Component {
   render() {
-    const { feedUrls } = this.props;
+    const { feedUrls, feedNames } = this.props;
 
     return (
       <React.Fragment>
         {feedUrls.length > 0 &&
           <ul className="feed-sources">
-            {feedUrls && feedUrls.map((feedUrl, i) =>
-              <li key={`feed-source-${i}`} className="feed-sources__item">
-                <FeedSource name={feedUrl} sourceNum={i} />
-              </li>
-            )}
+            {feedUrls && feedUrls.map((feedUrl, i) => {
+              const feedName = feedNames[feedUrl] || feedUrl;
+              return (
+                <li key={`feed-source-${i}`} className="feed-sources__item">
+                  <FeedSource name={feedName} sourceNum={i} />
+                </li>
+              );
+            })}
           </ul>
         }
         {feedUrls.length === 0 &&
@@ -31,6 +34,6 @@ class FeedSources extends React.Component {
   }
 }
 
-let mapToProps = ({ feedUrls }) => ({ feedUrls });
+let mapToProps = ({ feedUrls, feedNames }) => ({ feedUrls, feedNames });
 
 export default connect(mapToProps, actions)(FeedSources);

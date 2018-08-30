@@ -2,6 +2,7 @@ import createStore from 'redux-zero';
 
 const state = {
   feedUrls: [],
+  feedNames: [],
   feedItems: [],
   loadProgress: 0,
 };

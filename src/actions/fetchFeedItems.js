@@ -13,6 +13,7 @@ import moment from 'moment';
 const fetchFeedItems = async (state, updateLoadProgress) => {
   const { feedUrls } = state;
   let feedItems = [];
+  let feedNames = [];
 
   if (feedUrls) {
     let i = 0;
@@ -23,6 +24,7 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
 
       try {
         let feed = await rssParser.parseURL(`${corsProxy}/?url=${feedUrl}`);
+        feedNames[feedUrl] = feed.title;
         feed.items.forEach((feedItem) => {
           feedItem.date = moment(feedItem.pubDate).format('MMM D, YYYY @ h:mma');
           feedItem.source = feedUrl;
@@ -37,7 +39,7 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
   updateLoadProgress(0);
   feedItems = sortFeedItems(feedItems);
   setLocalStorage({ ...state, feedItems });
-  return { feedItems };
+  return { feedItems, feedNames };
 };
 
 export default fetchFeedItems;
