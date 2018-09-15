@@ -8,10 +8,8 @@ class FeedItem extends React.Component {
 
     return (
       <a className="feed-item" href={url} target="_blank">
-        <div className="container">
-          <h3 className="feed-item__name">{title}</h3>
-          <p className="feed-item__meta">{date}</p>
-        </div>
+        <h3 className="feed-item__name">{title}</h3>
+        <p className="feed-item__meta">{date}</p>
       </a>
     );
   }

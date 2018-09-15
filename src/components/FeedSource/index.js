@@ -17,22 +17,22 @@ class FeedSource extends React.Component {
 
     return (
       <div className="feed-source">
-        <div className="container">
-          <div className="feed-source__flex">
-            <h4 className="feed-source__name">{name}</h4>
-            <Link
-              className="feed-source__action"
-              to={`/source/${sourceNum}`}
-            >
-              View
-            </Link>
-            <button
-              className="feed-source__action feed-source__action--alt"
-              onClick={() => this.handleRemove(name)}
-            >
-              Remove
-            </button>
-          </div>
+        <div className="feed-source__flex">
+          <h4 className="feed-source__name">{name}</h4>
+          <Link
+            className="feed-source__action"
+            to={`/source/${sourceNum}`}
+            aria-label="View"
+          >
+            <i className="fa fa-search" />
+          </Link>
+          <button
+            className="feed-source__action feed-source__action--alt"
+            onClick={() => this.handleRemove(name)}
+            aria-label="Remove"
+          >
+            <i className="fa fa-trash" />
+          </button>
         </div>
       </div>
     );

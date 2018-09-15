@@ -11,16 +11,18 @@ class FeedSources extends React.Component {
     return (
       <React.Fragment>
         {feedUrls.length > 0 &&
-          <ul className="feed-sources">
-            {feedUrls && feedUrls.map((feedUrl, i) => {
-              const feedName = feedNames[feedUrl] || feedUrl;
-              return (
-                <li key={`feed-source-${i}`} className="feed-sources__item">
-                  <FeedSource name={feedName} sourceNum={i} />
-                </li>
-              );
-            })}
-          </ul>
+          <div class="container">
+            <ul className="feed-sources">
+              {feedUrls && feedUrls.map((feedUrl, i) => {
+                const feedName = feedNames[feedUrl] || feedUrl;
+                return (
+                  <li key={`feed-source-${i}`} className="feed-sources__item">
+                    <FeedSource name={feedName} sourceNum={i} />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         }
         {feedUrls.length === 0 &&
           <div className="container">

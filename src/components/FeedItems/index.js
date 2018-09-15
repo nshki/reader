@@ -30,17 +30,19 @@ class FeedItems extends React.Component {
           </div>
         }
         {filteredItems.length > 0 &&
-          <ul className="feed-items">
-            {filteredItems.map((feedItem, i) => (
-              <li key={`feed-item-${i}`} className="feed-items__item">
-                <FeedItem
-                  title={feedItem.title}
-                  url={feedItem.link}
-                  date={feedItem.date}
-                />
-              </li>
-            ))}
-          </ul>
+          <div class="container">
+            <ul className="feed-items">
+              {filteredItems.map((feedItem, i) => (
+                <li key={`feed-item-${i}`} className="feed-items__item">
+                  <FeedItem
+                    title={feedItem.title}
+                    url={feedItem.link}
+                    date={feedItem.date}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         }
         {filteredItems.length === 0 &&
           <div className="container">
