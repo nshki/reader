@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
 import FeedSource from '../FeedSource';
-import './style.css';
+import { Container, Items, Item, Text } from './style';
 
 class FeedSources extends React.Component {
   render() {
@@ -11,25 +11,25 @@ class FeedSources extends React.Component {
     return (
       <React.Fragment>
         {feedUrls.length > 0 &&
-          <div class="container">
-            <ul className="feed-sources">
+          <Container>
+            <Items>
               {feedUrls && feedUrls.map((feedUrl, i) => {
                 const feedName = feedNames[feedUrl] || feedUrl;
                 return (
-                  <li key={`feed-source-${i}`} className="feed-sources__item">
+                  <Item key={`feed-source-${i}`}>
                     <FeedSource name={feedName} sourceNum={i} />
-                  </li>
+                  </Item>
                 );
               })}
-            </ul>
-          </div>
+            </Items>
+          </Container>
         }
         {feedUrls.length === 0 &&
-          <div className="container">
-            <p className="feed-sources__empty">
+          <Container>
+            <Text>
               No sources! Try adding some above.
-            </p>
-          </div>
+            </Text>
+          </Container>
         }
       </React.Fragment>
     );
