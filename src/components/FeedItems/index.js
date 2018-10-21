@@ -19,7 +19,7 @@ class FeedItems extends React.Component {
     }
 
     return (
-      <React.Fragment>
+      <>
         {feedSource &&
           <Source>
             <Container>
@@ -51,7 +51,7 @@ class FeedItems extends React.Component {
             </Text>
           </Container>
         }
-      </React.Fragment>
+      </>
     );
   }
 }

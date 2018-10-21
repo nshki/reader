@@ -9,7 +9,7 @@ class FeedSources extends React.Component {
     const { feedUrls, feedNames } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         {feedUrls.length > 0 &&
           <Container>
             <Items>
@@ -31,7 +31,7 @@ class FeedSources extends React.Component {
             </Text>
           </Container>
         }
-      </React.Fragment>
+      </>
     );
   }
 }
