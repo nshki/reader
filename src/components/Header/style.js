@@ -31,15 +31,15 @@ export const Logo = styled.h1`
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
-`;
 
-export const Svg = styled.svg`
-  fill: #fff;
-  width: 12px;
-  height: 12px;
-  margin-right: 5px;
-  transform: translateY(-2px);
-  vertical-align: middle;
+  svg {
+    fill: #fff;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transform: translateY(-2px);
+    vertical-align: middle;
+  }
 `;
 
 export const Nav = styled.nav`

@@ -28,10 +28,10 @@
   },
   "browserslist": {
     "development": [
-      "last 1 browser"
+      "last 1 version"
     ],
     "production": [
-      "last 4 browser"
+      "last 4 version"
     ]
   }
 }
