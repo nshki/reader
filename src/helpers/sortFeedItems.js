@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { parse, isBefore, isAfter } from 'date-fns';
 
 /**
  * Given an array of feed item objects, sort them by date.
@@ -8,12 +8,12 @@ import moment from 'moment';
  */
 const sortFeedItems = (feedItems) => {
   return [...feedItems].sort((a, b) => {
-    const aMoment = moment(a.pubDate);
-    const bMoment = moment(b.pubDate);
+    const aDate = parse(a.pubDate);
+    const bDate = parse(b.pubDate);
 
-    if (aMoment.isBefore(bMoment)) {
+    if (isBefore(aDate, bDate)) {
       return 1;
-    } else if (aMoment.isAfter(bMoment)) {
+    } else if (isAfter(aDate, bDate)) {
       return -1;
     } else {
       return 0;
