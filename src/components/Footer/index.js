@@ -1,20 +1,17 @@
 import React from 'react';
-import './style.css';
+import { Container, Link } from './style';
 
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="footer">
-        <div className="container">
-          <a
-            className="footer__link"
-            href="https://github.com/nshki/reader"
-            aria-label="View on GitHub"
-          >
-            View on GitHub
-          </a>
-        </div>
-      </footer>
+      <Container>
+        <Link
+          href="https://github.com/nshki/reader"
+          aria-label="View on GitHub"
+        >
+          View on GitHub
+        </Link>
+      </Container>
     );
   }
 }
