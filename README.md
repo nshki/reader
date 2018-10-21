@@ -16,6 +16,7 @@ https://rss-reader.netlify.com/
 - [create-react-app](https://github.com/facebook/create-react-app)
 - [Redux Zero](https://github.com/concretesolutions/redux-zero)
 - [rss-parser](https://github.com/bobby-brennan/rss-parser)
+- [styled-components](https://www.styled-components.com/)
 - [Moment.js](https://momentjs.com/)
 
 
