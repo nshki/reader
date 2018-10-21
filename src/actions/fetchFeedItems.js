@@ -1,6 +1,6 @@
 import { rssParser, corsProxy } from '../shared/constants';
 import { sortFeedItems, setLocalStorage } from '../helpers';
-import moment from 'moment';
+import { parse, format } from 'date-fns';
 
 /**
  * Given a list of URLs, parses the RSS from each one (removes the URL from the
@@ -26,7 +26,7 @@ const fetchFeedItems = async (state, updateLoadProgress) => {
         let feed = await rssParser.parseURL(`${corsProxy}/?url=${feedUrl}`);
         feedNames[feedUrl] = feed.title;
         feed.items.forEach((feedItem) => {
-          feedItem.date = moment(feedItem.pubDate).format('MMM D, YYYY @ h:mma');
+          feedItem.date = format(parse(feedItem.pubDate), 'MMM D, YYYY @ h:mma');
           feedItem.source = feedUrl;
         });
         feedItems = feedItems.concat(feed.items);
