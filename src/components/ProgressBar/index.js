@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import { Container, Fill } from './style';
 
 class ProgressBar extends React.Component {
   render() {
     const { progress } = this.props;
-    const visible = progress > 0 ? 'progress-bar--visible' : '';
+    const visible = progress > 0;
 
     return (
-      <div className={`progress-bar ${visible}`}>
-        <div
-          className="progress-bar__fill"
-          style={{ transform: `scale3d(${progress}, 1, 1)` }}
-        >
-        </div>
-      </div>
+      <Container visible={visible}>
+        <Fill progress={progress} />
+      </Container>
     );
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
 import FeedItem from '../FeedItem';
-import './style.css';
+import { Source, SourceText, Container, Items, Item, Text } from './style';
 
 class FeedItems extends React.Component {
   render() {
@@ -21,35 +21,35 @@ class FeedItems extends React.Component {
     return (
       <React.Fragment>
         {feedSource &&
-          <div className="feed-items__source">
-            <div className="container">
-              <p className="feed-items__source__text">
+          <Source>
+            <Container>
+              <SourceText>
                 Source: {feedSource}
-              </p>
-            </div>
-          </div>
+              </SourceText>
+            </Container>
+          </Source>
         }
         {filteredItems.length > 0 &&
-          <div class="container">
-            <ul className="feed-items">
+          <Container>
+            <Items>
               {filteredItems.map((feedItem, i) => (
-                <li key={`feed-item-${i}`} className="feed-items__item">
+                <Item key={`feed-item-${i}`}>
                   <FeedItem
                     title={feedItem.title}
                     url={feedItem.link}
                     date={feedItem.date}
                   />
-                </li>
+                </Item>
               ))}
-            </ul>
-          </div>
+            </Items>
+          </Container>
         }
         {filteredItems.length === 0 &&
-          <div className="container">
-            <p className="feed-items__empty">
+          <Container>
+            <Text>
               No news here! Try adding some sources above.
-            </p>
-          </div>
+            </Text>
+          </Container>
         }
       </React.Fragment>
     );

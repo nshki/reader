@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import { Container, Heading, Meta } from './style';
 
 class FeedItem extends React.Component {
   render() {
     const { title, url, date } = this.props;
 
     return (
-      <a className="feed-item" href={url} target="_blank">
-        <h3 className="feed-item__name">{title}</h3>
-        <p className="feed-item__meta">{date}</p>
-      </a>
+      <Container href={url} target="_blank">
+        <Heading>{title}</Heading>
+        <Meta>{date}</Meta>
+      </Container>
     );
   }
 }
