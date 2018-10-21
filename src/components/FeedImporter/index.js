@@ -2,7 +2,7 @@ import React from 'react';
 import parseOPML from 'node-opml-parser';
 import { connect } from 'redux-zero/react';
 import actions from '../../actions';
-import './style.css';
+import { Container, Text, Input, Status } from './style';
 
 class FeedImporter extends React.Component {
   state = { statusText: '' };
@@ -37,24 +37,23 @@ class FeedImporter extends React.Component {
     const { statusText } = this.state;
 
     return (
-      <div className="container">
-        <p className="feed-importer__text">
+      <Container>
+        <Text>
           Importing sources via OPML file uploads is currently supported. Please
           select an OPML file below.
-        </p>
+        </Text>
 
-        <input
-          className="feed-importer__input"
+        <Input
           type="file"
           onChange={this.handleChange}
         />
 
         {statusText.length > 0 &&
-          <p className="feed-importer__status">
+          <Status>
             {statusText}
-          </p>
+          </Status>
         }
-      </div>
+      </Container>
     );
   }
 }
